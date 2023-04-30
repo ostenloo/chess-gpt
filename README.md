@@ -25,3 +25,11 @@ for positional evaluation.
 * Here, we attempt to perform Cross Attention on a players' games to stylize StockFish to play like an individual player. 
 
 * To measure how closely the engine matches a players' style, we will run the 
+
+# Idea 
+
+Instead of using the PGN as input states, create a sequence of FENs 
+
+# longest possible FEN 
+
+87 characters 
