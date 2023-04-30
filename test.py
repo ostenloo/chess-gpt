@@ -54,27 +54,45 @@ import torch
 # print(g) # tensor([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])
 
 
-# def load_pgn_moves(file_name): 
-#     pgn = open(f"data/{file_name}.pgn", "r")
-#     games = [] 
+def load_pgn_moves(file_name): 
+    pgn = open(f"data/{file_name}.pgn", "r")
+    games = [] 
 
-#     pgn_content = pgn.read() 
+    pgn_content = pgn.read() 
 
-#     games = pgn_content.split("\n\n")[:-1]
+    games = pgn_content.split("\n\n")[:-1]
 
-#     game_move_list = []
+    game_move_list = []
 
-#     for game in games: 
-#         moves = [move[max(0,move.find(".")+1):].strip("\n") for move in game.split(" ")[:-2]]
-#         print(moves)
-#         game_move_list.append(moves)
+    for game in games: 
+        moves = [move[max(0,move.find(".")+1):] for move in game.split()]
+        game_move_list.append(moves)
 
-#     return game_move_list
+    return game_move_list
 
 # game_move_list = load_pgn_moves("tal_white_games")
 
-x = torch.randn(3,2)
+# x = torch.randn(3,2)
 
-print(x)
+# print(x)
 
-print(x.contiguous())
+# print(x.contiguous())
+
+# fens = []
+# with open("data/tal_black_games_fen.txt", "r") as f: 
+#     lines = f.readlines()
+#     for line in lines:  
+#         fen = line.strip("\n").split(";")
+#         fens.append(fen)
+
+# f.close() 
+
+# pgn = load_pgn_moves("tal_black_games")
+
+# uci = load_uci_moves("tal_black_games")
+
+# for i in range(len(fens)): 
+#     assert len(fens[i]) == len(pgn[i]), f"line {i} does not match"
+
+# print(fen)
+# print(pgn)

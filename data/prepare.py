@@ -1,6 +1,3 @@
-from torch.utils.data import DataLoader 
-import re
-
 black_games = []
 white_games = [] 
 
